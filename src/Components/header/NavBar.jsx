@@ -1,17 +1,24 @@
 import React from "react";
-import 'boxicons'
 import "./NavBar.css"
+import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
+
+    const secciones = [
+        {id: 0, nombre: 'seccion 1' },
+        {id: 1, nombre: 'seccion 2' },
+        {id: 2, nombre: 'seccion 3' }
+    ]
+
     return (
         <header>
-            <h1>ADIDAS OUTLET</h1>
+            <h1>JIMENEZ OUTLET</h1>
             <nav>
-                <a href="#">seccion 1</a>
-                <a href="#">seccion 2</a>
-                <a href="#">seccion 3</a>
+                {secciones.map((seccion) => {
+                    return <a href='#'>{seccion.nombre}</a>
+                })}
             </nav>
-            <box-icon type='solid' name='cart'></box-icon>
+            <CartWidget />
         </header>
     )
 }
