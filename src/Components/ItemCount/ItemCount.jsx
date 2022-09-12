@@ -12,9 +12,9 @@ const EstiloContador = styled.div`
     `};
 `;
 
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({initial, stock, onAdd}) => {
 
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(initial);
 
     const agregarUnidad = () => {
         if (contador < stock){
@@ -23,7 +23,7 @@ const ItemCount = ({stock, onAdd}) => {
     }
 
     const sacarUnidad = () => {
-        if (contador > 0){
+        if (contador > initial){
             setContador(contador - 1)
         }
     }
@@ -36,9 +36,9 @@ const ItemCount = ({stock, onAdd}) => {
         <>
             <EstiloContador count>
                 <button onClick={vaciarCarrito}>Vaciar carrito</button>
-                <button class='botonRestar' onClick={sacarUnidad}><span>-</span></button>
+                <button class='botonRestar' disabled={contador === initial} onClick={sacarUnidad}><span>-</span></button>
                 <h1>{contador}</h1>
-                <button class='botonAgregar' onClick={agregarUnidad}><span>+</span></button>
+                <button class='botonAgregar' disabled={contador === stock} onClick={agregarUnidad}><span>+</span></button>
                 <button onClick={()=>onAdd(contador)}>Añadir al carrito</button>
             </EstiloContador>
         </>

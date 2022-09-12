@@ -5,9 +5,11 @@ import CartWidget from "../CartWidget/CartWidget";
 const NavBar = () => {
 
     const secciones = [
-        {id: 0, nombre: 'seccion 1' },
-        {id: 1, nombre: 'seccion 2' },
-        {id: 2, nombre: 'seccion 3' }
+        {id: 0, nombre: 'Remeras' },
+        {id: 1, nombre: 'Camisetas' },
+        {id: 2, nombre: 'Pantalones' },
+        {id: 2, nombre: 'Pantalones cortos' },
+        {id: 2, nombre: 'Zapatillas' }
     ]
 
     return (
