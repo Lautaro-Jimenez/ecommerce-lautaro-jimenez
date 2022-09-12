@@ -1,21 +1,26 @@
-import React from 'react'
-import styled, {css} from 'styled-components'
+import { Spinner } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react'
+import { productos } from '../../assets/productos'
+import { promesa } from '../../assets/utility/promesa';
+import ItemList from '../../Components/ItemList/ItemList';
 
-const CentrarBienvenida = styled.h2`
+const ItemListContainer = ({ greeting }) => {
 
-    ${props => props.msjinicio && css`
-        text-align: center;
-        font-size: 35px;
-        color: red;
-    `};
-`;
+  const [listaProductos, setListaProductos] = useState([])
+  const [cargando, setCargando] = useState(true)
 
-const ItemListContainer = ({greeting}) => {
+  useEffect(() => {
+    setCargando(true)
+    promesa(productos)
+      .then(res => {
+        setCargando(false)
+        setListaProductos(res)
+      })
+  }, [])
+
   return (
     <>
-        <CentrarBienvenida msjinicio>
-            <h2>{greeting}</h2>
-        </CentrarBienvenida>
+      {cargando ? <Spinner /> : <ItemList listaProductos={listaProductos} /> }
     </>
   )
 }
