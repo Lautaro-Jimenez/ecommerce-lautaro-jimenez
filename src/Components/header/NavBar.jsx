@@ -1,27 +1,30 @@
 import React from "react";
-import "./NavBar.css"
+import logo from '../../assets/jimenezLogo.png'
 import CartWidget from "../CartWidget/CartWidget";
+import styled from "styled-components";
+import { HeaderSC, NavSC, AStyledComponents, H1StyledComponents, NormalizeSC, LogoSC } from "./NavBar.styles";
+
 
 const NavBar = () => {
 
+    //array con las secciones de la página
     const secciones = [
-        {id: 0, nombre: 'Remeras' },
-        {id: 1, nombre: 'Camisetas' },
-        {id: 2, nombre: 'Pantalones' },
-        {id: 2, nombre: 'Pantalones cortos' },
-        {id: 2, nombre: 'Zapatillas' }
+        { id: 0, nombre: 'Remeras' },
+        { id: 1, nombre: 'Pantalones' },
+        { id: 2, nombre: 'Calzados' }
     ]
 
     return (
-        <header>
-            <h1>JIMENEZ OUTLET</h1>
-            <nav>
+        <HeaderSC>
+            {/* <H1StyledComponents>JIMENEZ OUTLET</H1StyledComponents> */}
+            <LogoSC src={logo} alt="" />
+            <NavSC>
                 {secciones.map((seccion) => {
-                    return <a href='#'>{seccion.nombre}</a>
+                    return <AStyledComponents href='#'>{seccion.nombre}</AStyledComponents>
                 })}
-            </nav>
+            </NavSC>
             <CartWidget />
-        </header>
+        </HeaderSC>
     )
 }
 

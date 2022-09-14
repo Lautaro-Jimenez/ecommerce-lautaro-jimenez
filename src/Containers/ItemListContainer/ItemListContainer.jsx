@@ -4,7 +4,7 @@ import { productos } from '../../assets/productos'
 import { promesa } from '../../assets/utility/promesa';
 import ItemList from '../../Components/ItemList/ItemList';
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
   const [listaProductos, setListaProductos] = useState([])
   const [cargando, setCargando] = useState(true)
