@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-export const NormalizeSC = styled.body`
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-`
-
 export const HeaderSC = styled.header`
     display: flex;
     align-items: center;
@@ -24,6 +16,7 @@ export const NavSC = styled.nav`
 export const LogoSC = styled.img`
     width: 200px;
     height: 120px;
+    object-fit: cover;
 `;
 // export const H1StyledComponents = styled.h1`
 //     font-size: 25px;
