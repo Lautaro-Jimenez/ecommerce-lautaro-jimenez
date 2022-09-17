@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, Image, VStack, Button } from '@chakra-ui/react'
 import styled from 'styled-components'
+import { CardProduct } from './Item.styles'
 
 // const FlexBox = styled.div`
 //     display: flex;
@@ -13,10 +14,12 @@ const Item = ({ producto }) => {
 
     return (
         <VStack>
-            <Text fontSize='3xl'>{producto.nombreProd}</Text>
-            <Image src={producto.imagenProd} w='350px' />
-            <Text>${producto.precioProd}</Text>
-            <Button colorScheme='blue'>Más detalles</Button>
+            <CardProduct>
+                <Text fontSize='2xl' fontWeight={700} >{producto.nombreProd}</Text>
+                <Image src={producto.imagenProd} w='350px' />
+                <Text margin='10px' fontWeight={600}>${producto.precioProd}</Text>
+                <Button colorScheme='blue'>Más detalles</Button>
+            </CardProduct>
         </VStack>
     )
 }
