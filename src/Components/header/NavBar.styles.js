@@ -18,10 +18,6 @@ export const LogoSC = styled.img`
     height: 120px;
     object-fit: cover;
 `;
-// export const H1StyledComponents = styled.h1`
-//     font-size: 25px;
-//     margin: 10px;
-// `;
 
 export const AStyledComponents = styled.a`
     font-size: 30px;

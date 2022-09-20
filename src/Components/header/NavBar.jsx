@@ -16,7 +16,6 @@ const NavBar = () => {
 
     return (
         <HeaderSC>
-            {/* <H1StyledComponents>JIMENEZ OUTLET</H1StyledComponents> */}
             <LogoSC src={logo} alt="" />
             <NavSC>
                 {secciones.map((seccion) => {

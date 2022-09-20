@@ -3,7 +3,7 @@ import NavBar from "./Components/header/NavBar";
 import ItemListContainer from "./Containers/ItemListContainer/ItemListContainer";
 import ItemCount from "./Components/ItemCount/ItemCount";
 import { ChakraProvider } from "@chakra-ui/react";
-// import ItemDetailContainer from "./Containers/ItemDetailContainer/ItemDetailContainer";
+import ItemDetailContainer from "./Containers/ItemDetailContainer/ItemDetailContainer";
 
 const App = () => {
 
@@ -16,7 +16,7 @@ const App = () => {
       <ChakraProvider>
         <NavBar />
         <ItemListContainer />
-        {/* <ItemDetailContainer /> */}
+        <ItemDetailContainer />
         <ItemCount initial={1} stock={10} onAdd={onAdd} />
       </ChakraProvider>
     </>
