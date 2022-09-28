@@ -9,9 +9,6 @@ import Carrito from "./Components/Carrito/Carrito";
 
 const App = () => {
 
-  // const onAdd = (contador) => {
-  //   console.log("producto añadido con éxito al carrito!");
-  // };
 
   return (
     <>
@@ -21,9 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<ItemListContainer />}/>
             <Route path="/seccion/:id" element={<ItemListContainer />}  />
-            {/* <ItemListContainer /> */}
             <Route path="/detalles/:id" element={<ItemDetailContainer />}/>
-            {/* <ItemDetailContainer /> */}
             <Route path="/carrito" element={<Carrito />}/>
             {/* <ItemCount initial={1} stock={10} onAdd={onAdd} /> */}
           </Routes>
