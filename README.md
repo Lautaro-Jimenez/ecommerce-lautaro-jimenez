@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+Primera Pre-Entrega del Proyecto Final. Cambios: 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Se realizó la configuración del routing usando el BrowserRouter en App.js.
+
+-Se configuraron las rutas de navegación para poder acceder al detalle de cada producto junto a su respectivo ID. La navegación es posible para el "inicio" que fue configurado en el logo como botón, también entre las categorías disponibles y para el ícono del carrito que en posteriores entregas estará en funcionamiento
+
+-Se creó el componente Home el cual va a ser el inicio del E-commerce y a su vez también fue creado el componente Carrito el cual está en proceso de elaboración para su posterior funcionamiento.
+
+
 
 ## Available Scripts
 
