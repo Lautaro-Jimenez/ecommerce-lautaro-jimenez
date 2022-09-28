@@ -1,5 +1,5 @@
 import { Spinner } from '@chakra-ui/react';
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { productos } from '../../assets/productos'
 import { promesa } from '../../assets/utility/promesa';
 import ItemList from '../../Components/ItemList/ItemList';
@@ -16,11 +16,15 @@ const ItemListContainer = () => {
         setCargando(false)
         setListaProductos(res)
       })
+
   }, [])
 
   return (
     <>
-      {cargando ? <Spinner /> : <ItemList listaProductos={listaProductos} /> }
+      {(cargando) ? 
+      (<Spinner />) 
+      : 
+      (<ItemList listaProductos={listaProductos} />) }
     </>
   )
 }

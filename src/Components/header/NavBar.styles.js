@@ -18,10 +18,3 @@ export const LogoSC = styled.img`
     height: 120px;
     object-fit: cover;
 `;
-
-export const AStyledComponents = styled.a`
-    font-size: 30px;
-    padding: 25px;
-    text-decoration: none;
-    color: black;
-`;
