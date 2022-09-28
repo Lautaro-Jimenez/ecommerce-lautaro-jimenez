@@ -1,4 +1,4 @@
-Primera Pre-Entrega del Proyecto Final. Cambios: 
+## Primera Pre-Entrega del Proyecto Final. Cambios: 
 
 -Se realizó la configuración del routing usando el BrowserRouter en App.js.
 
