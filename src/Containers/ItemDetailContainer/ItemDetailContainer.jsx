@@ -10,8 +10,8 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const [cargando, setCargando] = useState(true)
 
-    const {id} = useParams();
-    
+    const { id } = useParams();
+
     useEffect(() => {
         const getProducto = async () => {
             try {
@@ -23,10 +23,10 @@ const ItemDetailContainer = () => {
                     setProducto(resp)
                 }
             }
-            catch(err){
+            catch (err) {
                 console.error("No se encontraron productos", err);
             }
-            finally{
+            finally {
                 setCargando(false);
             }
         }
@@ -35,7 +35,12 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {cargando ? <Spinner /> : <ItemDetail {...producto} />}
+            {cargando ? <Spinner
+                thickness='4px'
+                speed='0.45s'
+                emptyColor='gray.200'
+                color='red.500'
+                size='xl' /> : <ItemDetail {...producto} />}
         </>
     )
 }

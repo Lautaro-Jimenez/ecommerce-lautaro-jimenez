@@ -18,20 +18,6 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
         }
     }
 
-    // const agregar = () => {
-    //     let cant = cantidad + contador;
-    //     if (cant <= stock) {
-    //         setCantidad(cant)
-    //         onAdd(contador)
-    //     } else {
-    //         Swal.fire({
-    //             text: 'Temporalmente sin stock del producto seleccionado',
-    //             icon: 'error',
-    //             confirmButtonText: 'Ok'
-    //         });
-    //     }
-    // }
-
 
     return (
         <VStack>

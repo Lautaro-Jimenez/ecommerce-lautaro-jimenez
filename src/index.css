@@ -7,8 +7,22 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background: rgb(54, 95, 116);
+  width: 100%;
+  height: 100%;
+}
+
+.chakra-ui-light {
+  background: rgb(54, 95, 116);
+}
+
 #root {
   background-color: rgb(54, 95, 116);
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
+

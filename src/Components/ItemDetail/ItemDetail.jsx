@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
+import { CardProduct, CardProductTEST, Detalle, DetalleContador } from './ItemDetail.styled';
 
 const ItemDetail = ({ id, nombreProd, imagenProd, seccion, precioProd, descProd, stockProd }) => {
 
@@ -26,17 +27,20 @@ const ItemDetail = ({ id, nombreProd, imagenProd, seccion, precioProd, descProd,
 
     return (
         <>
+            <Link to={`/seccion/${seccion}`}><Button>Regresar</Button></Link>
             <VStack>
-                <div className='containerDetalleProd'>
-                    <Link to={`/seccion/${seccion}`}><Button>Regresar</Button></Link>
-                    <Text>Nombre: {nombreProd} </Text>
+                <Text fontSize='5xl' justifyContent='center'>Nombre: {nombreProd} </Text>
+                <CardProduct>
                     <Image src={imagenProd} w='350px' />
-                    <Text>Seccion: {seccion} </Text>
-                    <Text>Descripcion: {descProd} </Text>
-                    <Text>Precio: ${precioProd} </Text>
-                    {/* <ItemCount stock={producto.stock} initial={1} onAdd={msjAlert} /> */}
-                    {quantity > 0 ? <Link to='/Carrito'>Ir al carrito</Link> : <ItemCount stock={stockProd} initial={quantityAdded} onAdd={onAdd} />}
-                </div>
+                </CardProduct>
+                <Detalle>
+                    <Text fontSize='3xl'>Seccion: {seccion} </Text>
+                    <Text fontSize='4xl'>Descripcion: {descProd} </Text>
+                    <Text fontSize='3xl'>Precio: ${precioProd} </Text>
+                </Detalle>
+                <DetalleContador>
+                    {quantity > 0 ? <Button><Link to='/Carrito'>Ir al carrito</Link></Button> : <ItemCount stock={stockProd} initial={quantityAdded} onAdd={onAdd} />}
+                </DetalleContador>
             </VStack>
         </>
     )

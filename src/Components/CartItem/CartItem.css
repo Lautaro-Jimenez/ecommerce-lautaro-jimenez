@@ -1,0 +1,45 @@
+.CardCartItem {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding: 20px;
+    margin: 30px;
+    font-size: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+    border-radius: 10px;
+}
+
+.InfoCartItem {
+    margin-right: 50px;
+}
+
+.ContainerItemCartItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ItemHeaderCartItem {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.InfoCartItem {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ItemFooterCartItem {
+    display: flex;
+}
+
+.imgCart {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}

@@ -8,6 +8,6 @@ export const CardProduct = styled.div`
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     background-color: rgb(236, 239, 241);
     overflow: hidden;
-    margin: 10px;
+    margin: 120px;
     text-align: center;
-`
+`;

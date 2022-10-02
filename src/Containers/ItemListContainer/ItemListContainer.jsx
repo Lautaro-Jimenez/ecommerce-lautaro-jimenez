@@ -21,10 +21,15 @@ const ItemListContainer = () => {
 
   return (
     <>
-      {(cargando) ? 
-      (<Spinner />) 
-      : 
-      (<ItemList listaProductos={listaProductos} />) }
+      {(cargando) ?
+        (<Spinner
+          thickness='4px'
+          speed='0.45s'
+          emptyColor='gray.200'
+          color='red.500'
+          size='xl' />)
+        :
+        (<ItemList listaProductos={listaProductos} />)}
     </>
   )
 }
