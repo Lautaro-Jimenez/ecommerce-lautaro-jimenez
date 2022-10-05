@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Spinner } from '@chakra-ui/react';
 import ItemDetail from '../../Components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import { productos } from '../../assets/productos';
-import { promesa } from '../../assets/utility/promesa'
+import { db } from '../../Firebase/firebase'
+import { getDoc, doc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -13,24 +13,21 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const getProducto = async () => {
-            try {
-                setCargando(true)
-                let resp = await promesa(productos)
-                if (id) {
-                    setProducto(resp[parseInt(id)]);
-                } else {
-                    setProducto(resp)
-                }
-            }
-            catch (err) {
+
+        getDoc(doc(db, 'products', id))
+            .then(resp => {
+                const values = resp.data()
+
+                const product = { id: resp.id, ...values }
+                setProducto(product)
+            })
+            .catch(err => {
                 console.error("No se encontraron productos", err);
-            }
-            finally {
-                setCargando(false);
-            }
-        }
-        getProducto();
+            })
+            .finally(()=> {
+                setCargando(false)
+            })
+
     }, [id])
 
     return (

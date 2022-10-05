@@ -45,4 +45,4 @@ export const Detalle = styled.div`
 export const DetalleContador = styled.div`
     align-items: center;
     text-align: center;
-`
+`;

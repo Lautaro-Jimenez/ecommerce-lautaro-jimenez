@@ -45,7 +45,7 @@ export const productos = [
         nombreProd: 'Pantalón Essentials verde',
         seccion: 'Pantalones',
         descProd: 'Los pantalones perfectos cumplen tres criterios esenciales: Comodidad. Estilo. Facilidad de uso. Este par de adidas tiene un diseño minimalista y tejido polar grueso para mantenerte cómodo mientras te movés o te relajás.',
-        precioProd: 17.999,
+        precioProd: 17999,
         stockProd: 10
     },
 
@@ -55,7 +55,7 @@ export const productos = [
         nombreProd: 'Pantalón Essentials celeste',
         seccion: 'Pantalones',
         descProd: 'Los pantalones perfectos cumplen tres criterios esenciales: Comodidad. Estilo. Facilidad de uso. Este par de adidas tiene un diseño minimalista y tejido polar grueso para mantenerte cómodo mientras te movés o te relajás.',
-        precioProd: 17.999,
+        precioProd: 17999,
         stockProd: 10
     },
 
@@ -65,7 +65,7 @@ export const productos = [
         nombreProd: 'Shorts AeroReady',
         seccion: 'Pantalones',
         descProd: 'Una prenda básica para entrenar. Guardá estos shorts adidas en tu mochila deportiva y estarás listo para todo. No importa si es una clase de boxeo, una sesión de yoga o cualquier otro tipo de entrenamiento, su diseño está pensado para mantenerte seco en todo momento. Además, traen un bolsillo con cierre para que guardés la llaves o tu dinero y entrenés sin distracciones.',
-        precioProd: 12.999,
+        precioProd: 12999,
         stockProd: 6 
     },
 
@@ -75,7 +75,7 @@ export const productos = [
         nombreProd: 'Zapatillas Hoops 2.0 MID',
         seccion: 'Calzados',
         descProd: 'Un clásico estilo inspirado en el básquet. Estas zapatillas adidas de corte medio ofrecen una clásica energía deportiva y un moderno estilo urbano. El exterior de cuero sintético, el cuello de malla y la plantilla suave mantienen tus pies cómodos.',
-        precioProd: 19.999,
+        precioProd: 19999,
         stockProd: 4
     },
 
@@ -85,7 +85,7 @@ export const productos = [
         nombreProd: 'Zapatillas Casuals Adidas',
         seccion: 'Calzados',
         descProd: 'Es hora de agregarle un nuevo integrante a tu colección de zapatillas. Dale la bienvenida a estas zapatillas adidas Grand Court. Los diseñadores han tocado cada elemento, agregando una suela tipo cupsole resistente que brinda un máximo agarre en los días más mojados. Lo anterior sin dejar de lado el legado de adidas. El exterior de cuero sintético suave les deja a todos saber que eres el equipo de las 3 Tiras.',
-        precioProd: 17.999,
+        precioProd: 17999,
         stockProd: 6
     },
 
@@ -95,7 +95,7 @@ export const productos = [
         nombreProd: 'Zapatillas NMD_R1',
         seccion: 'Calzados',
         descProd: 'Esta es la temporada de villancicos, regalos y tiempo en familia. Pero no tenés que lucir un estilo formal para celebrar. Solo poné estas zapatillas adidas NMD_R1 en tus pies y dale un toque alegre a cualquier atuendo. Reinventando la icónica silueta inspirada en el running para la temporada, el exterior textil de corte ajustado luce un divertido diseño tejido navideño. Los detalles de copos de nieve les da una vibra de invierno (pero sin el frío).',
-        precioProd: 41.999,
+        precioProd: 41999,
         stockProd: 3
     },
 ]

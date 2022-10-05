@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
-import { CardProduct, CardProductTEST, Detalle, DetalleContador } from './ItemDetail.styled';
+import { CardProduct, Detalle, DetalleContador } from './ItemDetail.styled';
 
 const ItemDetail = ({ id, nombreProd, imagenProd, seccion, precioProd, descProd, stockProd }) => {
 
