@@ -1,5 +1,6 @@
 import React from 'react'
 import 'boxicons'
+import { Text } from '@chakra-ui/react'
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
@@ -24,7 +25,7 @@ const CartWidget = () => {
         <LogoCarro>
           <button>
             <box-icon iconoCarrito type='solid' name='cart'></box-icon>
-            {quantity}
+            <Text fontSize='xl' color='white' >{quantity}</Text>
           </button>
         </LogoCarro>
       </Link>

@@ -11,7 +11,6 @@ const NavBar = () => {
         { id: 0, nombre: 'Remeras', ruta: "/seccion/Remeras" },
         { id: 1, nombre: 'Pantalones', ruta: "/seccion/Pantalones" },
         { id: 2, nombre: 'Calzados', ruta: "/seccion/Calzados" }
-        // { id: 3, nombre: 'Camisetas' }
     ]
 
     return (
