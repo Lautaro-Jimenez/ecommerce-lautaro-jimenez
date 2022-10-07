@@ -1,76 +1,36 @@
-## Primera Pre-Entrega del Proyecto Final. Cambios: 
+![JimenezLogo](./src/assets/jimenezLogo.png)
 
--Se realizó la configuración del routing usando el BrowserRouter en App.js.
+# JIMENEZ OUTLET - Proyecto React JS 
 
--Se configuraron las rutas de navegación para poder acceder al detalle de cada producto junto a su respectivo ID. La navegación es posible para el "inicio" que fue configurado en el logo como botón, también entre las categorías disponibles y para el ícono del carrito que en posteriores entregas estará en funcionamiento
+## Objetivos del proyecto:
+- Desarrollar el front end de un E-commerce con carrito de compras, utilizando los componentes de React y Firebase como servidor en la nube.
+- Afirmar y conectar todos los conceptos adquiridos a lo largo del curso actual y cursos previos (Desarrollo Web y JavaScript)
+- Aprender mejores prácticas.
+- Practicar el flujo de trabajo utilizando GIT
+- Aprender a segmentar cada sección de la App, creando componentes reutilizables a futuro.
 
--Se creó el componente Home el cual va a ser el inicio del E-commerce y a su vez también fue creado el componente Carrito el cual está en proceso de elaboración para su posterior funcionamiento.
+### Iniciando
+1. Forkear el repositorio para tener una copia del mismo en su cuenta en caso de que lo deseen.
 
+2. [Clonar el repositorio](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository) en su computadora para acceder al código del proyecto. 
 
+_`IMPORTANTE:`_ Es necesario contar mínimamente con la última versión estable de [Node](https://nodejs.org/es/) y [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). Asegurarse de contar con ella para poder instalar correctamente las dependencias necesarias para correr el proyecto.
 
-## Available Scripts
+Para verificar que versión tienen instalada:
 
-In the project directory, you can run:
+```bash
+node -v
+npm -v
+```
 
-### `npm start`
+### Ejecución del proyecto
+1. Lo primero que se debe hacer es ejecutar en la terminal el comando `npm i` para que se comiencen a instalar las dependencias necesarias.
+2. Una vez realizado el paso anterior, ejecutaremos el comando `npm start` para dar comienzo de ejecución al script encargado de levantar el servidor.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## _Tecnologías utilizadas_
+- Se implementó el uso de Firebase y Firestore, para el diseño de la capa de datos dinámicos enriqueciendo así la aplicación.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Styled-Components
+- CSS nativo
+- Chakra UI
+- React Router DOM
