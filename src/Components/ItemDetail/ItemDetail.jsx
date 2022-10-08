@@ -21,7 +21,7 @@ const ItemDetail = ({ id, nombreProd, imagenProd, seccion, precioProd, descProd,
         });
 
         setQuantity(quantity)
-        addItem({ id, nombreProd, precioProd, quantity })
+        addItem({ id, nombreProd, precioProd, quantity, imagenProd })
     };
 
 

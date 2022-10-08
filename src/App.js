@@ -8,6 +8,7 @@ import Carrito from "./Components/Carrito/Carrito";
 import { CartContextProvider } from "./Context/CartContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./Components/Footer/Footer";
+import Checkout from "./Components/Checkout/Checkout";
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="/seccion/:id" element={<ItemListContainer />} />
               <Route path="/detalles/:id" element={<ItemDetailContainer />} />
               <Route path="/carrito" element={<Carrito />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </ChakraProvider>
           <Footer />

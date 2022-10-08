@@ -28,7 +28,7 @@ const Carrito = () => {
             { carrito.map(p => <CartItem key={p.id} {...p}/>) }
             <Text fontSize='4xl'>Total: ${total}</Text>
             <Button onClick={() => clearCart()}>Vaciar carrito</Button>
-            <Button>Finalizar Compra</Button>
+            <Link to='/checkout'>Finalizar Compra</Link>
         </VStack>
     )
 }

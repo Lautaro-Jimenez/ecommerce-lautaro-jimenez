@@ -4,7 +4,7 @@ import { CartContext } from "../../Context/CartContext";
 import './CartItem.css'
 
 
-const CartItem = ({ id, nombreProd, quantity, precioProd}) => {
+const CartItem = ({ id, nombreProd, quantity, precioProd, imagenProd }) => {
     const { removeItem } = useContext(CartContext)
 
     const handlerRemove = (id) => {
@@ -14,6 +14,9 @@ const CartItem = ({ id, nombreProd, quantity, precioProd}) => {
     return (
         <article className="CardCartItem">
             <header className="HeaderCartItem">
+                <div>
+                    <img className="img-cart" src={imagenProd} alt="" />
+                </div>
                 <h2 className="ItemHeaderCartItem">
                     {nombreProd}
                 </h2>

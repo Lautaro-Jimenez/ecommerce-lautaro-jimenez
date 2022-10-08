@@ -38,8 +38,8 @@
     display: flex;
 }
 
-.imgCart {
-    height: 50px;
+.img-cart {
+    height: 120px;
     margin-right: 10px;
     border-radius: 5px;
 }
