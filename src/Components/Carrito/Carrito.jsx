@@ -2,8 +2,8 @@ import { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
 import CartItem from '../CartItem/CartItem'
-import { Button, Text, VStack } from '@chakra-ui/react';
-import './Carrito.css'
+import { Button, Text } from '@chakra-ui/react';
+import { BotonComprar, CarritoContenedor, ContenedorBotones, SinProductos, Total, VolverHaciaAtras } from './Carrito.styled';
 
 
 const Carrito = () => {
@@ -13,23 +13,36 @@ const Carrito = () => {
     const totalQuantity = getQuantity()
     const total = getTotal()
 
-    if(totalQuantity === 0) {
+    if (totalQuantity === 0) {
         return (
-            <div className='SinProductos'>
+            <SinProductos>
                 <Text fontSize='7xl'>No hay productos en el carrito</Text>
-                <Link to='/' className='VolverHaciaAtras'>Ver productos</Link>
-            </div>
+                <Link to='/'><VolverHaciaAtras>Ver productos</VolverHaciaAtras></Link>
+            </SinProductos>
         )
     }
 
     return (
-        <VStack>
+        <CarritoContenedor>
             <Text fontSize='6xl' textAlign='center'>Carrito</Text>
-            { carrito.map(p => <CartItem key={p.id} {...p}/>) }
+            {/* { carrito.map(p => <CartItem key={p.id} {...p}/>) }
             <Text fontSize='4xl'>Total: ${total}</Text>
             <Button onClick={() => clearCart()}>Vaciar carrito</Button>
-            <Link to='/checkout'>Finalizar Compra</Link>
-        </VStack>
+            <Link to='/checkout'>Finalizar Compra</Link> */}
+            {carrito.map(p => <CartItem key={p.id} {...p} />)}
+            <Total>Total: ${total}</Total>
+            <ContenedorBotones>
+                <BotonComprar>
+                    <Link to='/checkout' className='BotonComprar'>Comprar</Link>
+                </BotonComprar>
+                <BotonComprar>
+                    <Link to='/' className='BotonComprar'>Seguir buscando</Link>
+                </BotonComprar>
+                <>
+                    <Button onClick={() => clearCart()}>Vaciar carrito</Button>
+                </>
+            </ContenedorBotones>
+        </CarritoContenedor>
     )
 }
 

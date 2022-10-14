@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../../assets/jimenezLogo.png'
 import CartWidget from "../CartWidget/CartWidget";
-import { HeaderSC, NavSC, AStyledComponents, LogoSC } from "./NavBar.styles";
+import { HeaderSC, NavSC, LogoSC } from "./NavBar.styles";
 import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {

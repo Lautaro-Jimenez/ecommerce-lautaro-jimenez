@@ -3,8 +3,8 @@ import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
 import { collection, addDoc, Timestamp, writeBatch, where, query, getDocs, documentId } from 'firebase/firestore';
 import { db } from '../../Firebase/firebase'
-import { Button } from '@chakra-ui/react';
-import { ContenedorFormulario, Formulario, OrderNumber } from './Checkout.styled';
+import { Button, Image } from '@chakra-ui/react';
+import { ContenedorFormulario, Detalle, DetalleCarrito, Formulario, Input, Label, OrderNumber, P } from './Checkout.styled';
 
 const Checkout = () => {
 
@@ -144,20 +144,35 @@ const Checkout = () => {
         <Formulario>
             <ContenedorFormulario>
                 <h2>Falta poco</h2>
-                <label>Nombre:
-                    <input type='text' onChange={(evnt) => setName(evnt.target.value)} required placeholder='Introduzca su nombre' />
-                </label>
-                <label>Documento:
-                    <input type='number' onChange={(evnt) => setDni(evnt.target.value)} required placeholder='Introduzca su numero de documento' />
-                </label>
-                <label>Email:
-                    <input type='email' onChange={(evnt) => setEmail(evnt.target.value)} required placeholder='Introduzca su dirección de email' />
-                </label>
-                <label>Telefono:
-                    <input type='number' onChange={(evnt) => setPhone(evnt.target.value)} required placeholder='Introduzca su numero de teléfono' />
-                </label>
+                <Label>Nombre:
+                    <Input type='text' onChange={(evnt) => setName(evnt.target.value)} required placeholder='Introduzca su nombre' />
+                </Label>
+                <Label>Documento:
+                    <Input type='number' onChange={(evnt) => setDni(evnt.target.value)} required placeholder='Introduzca su numero de documento' />
+                </Label>
+                <Label>Email:
+                    <Input type='email' onChange={(evnt) => setEmail(evnt.target.value)} required placeholder='Introduzca su dirección de email' />
+                </Label>
+                <Label>Telefono:
+                    <Input type='number' onChange={(evnt) => setPhone(evnt.target.value)} required placeholder='Introduzca su numero de teléfono' />
+                </Label>
             </ContenedorFormulario>
-            <Button type='submit' onClick={createOrder}>Comprar</Button>
+
+            <Detalle>
+                <h2>Detalle de tu compra</h2>
+                {carrito.map((prod) => {
+                    return (
+                        <DetalleCarrito key={prod.id}>
+                            <Link to={`/detalles/${prod.id}`}> <Image src={prod.imagenProd} alt={prod.nombreProd} /></Link>
+                            <Link to={`/detalles/${prod.id}`}> {prod.nombreProd} </Link>
+                            <Link to={`/detalles/${prod.id}`}> <P>Precio: $ {prod.precioProd}</P> </Link>
+                        </DetalleCarrito>
+                    );
+                })}
+                {/* <h3>Total: ${total()}</h3> */}
+                <Link to='/carrito'>Volver al carrito</Link>
+                <Button type='submit' onClick={createOrder}>Finalizar compra</Button>
+            </Detalle>
         </Formulario>
     )
 }

@@ -33,4 +33,17 @@ npm -v
 - Styled-Components
 - CSS nativo
 - Chakra UI
-- React Router DOM
+- React Router DOM para el enrutado dinámico.
+
+## Componentes fundamentales del proyecto
+1) `ItemListContainer`: Es el componente donde se crean las tarjetas (cards) de cada producto que está dentro de los componentes `ItemList` e `Item`.
+2) `ItemDetailContainer`: En este componente contenedor se muestran los detalles de los productos dentro de _ItemDetail_ que a su vez contiene dentro suyo a _ItemCount_ el cual es el encargado de ser el contador para el posterior agregado de productos.
+3. #### Array con los productos
+ - Se encuentra dentro de la carpeta `assets` bajo el nombre de _productos.js_ (posteriormente cargados en la Firebase)
+4) `Context`: Utilizado para la creación de funciones globales para su posterior aplicación en los demás componentes.
+5. #### Componentes dedicados al carrito: 
+- `Carrito`
+- `CartItem`
+- `CartWidget`
+
+6) `Checkout`: Este es el componente encargado de la realización de cargar las ordenes de compra de los usuarios a la base de datos y de emitir el respectivo comprobante de compra. Además, también se encarga de generar el formulario para que cada usuario ingrese los correspondientes datos solicitados
