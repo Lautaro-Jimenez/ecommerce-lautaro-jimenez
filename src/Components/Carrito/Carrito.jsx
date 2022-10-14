@@ -25,10 +25,6 @@ const Carrito = () => {
     return (
         <CarritoContenedor>
             <Text fontSize='6xl' textAlign='center'>Carrito</Text>
-            {/* { carrito.map(p => <CartItem key={p.id} {...p}/>) }
-            <Text fontSize='4xl'>Total: ${total}</Text>
-            <Button onClick={() => clearCart()}>Vaciar carrito</Button>
-            <Link to='/checkout'>Finalizar Compra</Link> */}
             {carrito.map(p => <CartItem key={p.id} {...p} />)}
             <Total>Total: ${total}</Total>
             <ContenedorBotones>

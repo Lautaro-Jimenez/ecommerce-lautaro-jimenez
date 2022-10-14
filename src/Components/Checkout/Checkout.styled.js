@@ -67,5 +67,3 @@ export const Span = styled.span`
     color: red;
     background-color: black;
 `
-
-// probando estilos diferentes 

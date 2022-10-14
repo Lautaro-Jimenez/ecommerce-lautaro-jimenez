@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Image, Button, Flex } from '@chakra-ui/react'
+import { Text, Image, Button } from '@chakra-ui/react'
 import { CardProduct } from './Item.styles'
 import { Link } from 'react-router-dom';
 

@@ -13,7 +13,7 @@ const ItemDetail = ({ id, nombreProd, imagenProd, seccion, precioProd, descProd,
 
     const quantityAdded = getProductQuantity(id)
 
-    const onAdd = (quantity) => { //const msjAlert
+    const onAdd = (quantity) => {
         Swal.fire({
             text: `Agregaste ${quantity} productos al carrito.`,
             icon: 'success',
