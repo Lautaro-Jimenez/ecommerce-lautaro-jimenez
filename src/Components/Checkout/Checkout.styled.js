@@ -47,10 +47,25 @@ export const P = styled.p`
 
 export const Label = styled.label`
     padding: 10px;
+    font-size: 25px;
+    color: beige;
 `;
 
 export const Input = styled.input`
     margin-left: 10px;
+    background-color: black;
+`;
+
+export const Anuncio = styled.p`
+    text-align: center;
+    padding: 40px;
+    color: beige;
+    background: repeating-linear-gradient(45deg, #294e5640, #f8f9fa0d 100px);
+`;
+
+export const Span = styled.span`
+    color: red;
+    background-color: black;
 `
 
 // probando estilos diferentes 

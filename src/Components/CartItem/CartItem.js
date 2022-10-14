@@ -12,30 +12,6 @@ const CartItem = ({ id, nombreProd, quantity, precioProd, imagenProd }) => {
     }
 
     return (
-        // <article className="CardCartItem">
-        //     <header className="HeaderCartItem">
-        //         <div>
-        //             <img className="img-cart" src={imagenProd} alt="" />
-        //         </div>
-        //     </header>
-        //     <h2 className="ItemHeaderCartItem">
-        //         {nombreProd}
-        //     </h2>
-        //     <section className="ContainerItemCartItem">
-        //         <p className="InfoCartItem">
-        //             Cantidad: {quantity}
-        //         </p>
-        //         <p className="InfoCartItem">
-        //             Precio unitario: ${precioProd}
-        //         </p>
-        //     </section>
-        //     <footer className="ItemFooterCartItem">
-        //         <p className="InfoCartItem">
-        //             Subtotal: ${precioProd * quantity}
-        //         </p>
-        //         <Button onClick={() => handlerRemove(id)}>X</Button>
-        //     </footer>
-        // </article>
         <article className="CardCartItem">
             <div>
                 <img className="img-cart" src={imagenProd} alt="" />

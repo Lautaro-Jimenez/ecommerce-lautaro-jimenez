@@ -3,8 +3,11 @@ import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
 import { collection, addDoc, Timestamp, writeBatch, where, query, getDocs, documentId } from 'firebase/firestore';
 import { db } from '../../Firebase/firebase'
-import { Button, Image } from '@chakra-ui/react';
-import { ContenedorFormulario, Detalle, DetalleCarrito, Formulario, Input, Label, OrderNumber, P } from './Checkout.styled';
+import { Button, Text } from '@chakra-ui/react';
+import { Anuncio, ContenedorFormulario, Detalle, Formulario, Input, Label, OrderNumber, P, Span } from './Checkout.styled';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { CardCartItem } from '../CartItem/CartItem.styled';
 
 const Checkout = () => {
 
@@ -26,11 +29,13 @@ const Checkout = () => {
     if (estado === 1) {
         return (
             <div>
-                <p>Compraste con exito!</p>
+                <Anuncio>Compraste con exito!</Anuncio>
                 <OrderNumber>
                     <p>Se emitió la orden exitosamente</p>
-                    <p>Tu número de orden es {orderNumber}</p>
-                    <Link to='/'>Seguir mirando</Link>
+                    <br />
+                    <p>Tu número de orden es <Span>{orderNumber}</Span></p>
+                    <br />
+                    <Link to='/'><Button>Seguir mirando</Button></Link>
                 </OrderNumber>
             </div>
         );
@@ -111,9 +116,19 @@ const Checkout = () => {
                 const orderAdded = await addDoc(orderRef, order);
                 batch.commit();
 
+                toast.success('Compraste con exito!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 clearCart();
                 setEstado(1);
                 setOrderNumber(orderAdded.id);
+
             } else {
                 setOutStock(outOfStock);
                 setEstado(2);
@@ -125,16 +140,54 @@ const Checkout = () => {
 
     const validate = () => {
         if (name.length <= 0) {
-            alert('El campo del nombre debe ser completado');
+            toast.error('Completar nombre!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return false;
         }
 
-        if (phone.length <= 0 || isNaN(parseInt(phone))) {
-            alert("El número de teléfono no puede contener caracteres");
+        if (dni.length <= 0) {
+            toast.error('Completar DNI!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return false;
         }
+        
         if (email.length <= 0 || !String(email).includes("@")) {
-            alert("Inserte un correo electrónico valido");
+            toast.error('Inserte un correo electrónico valido!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+            return false;
+        }
+        if (phone <= 0 || isNaN(parseInt(phone))) {
+            toast.error('Completar con numero de telefono!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return false;
         }
         return true;
@@ -143,35 +196,38 @@ const Checkout = () => {
     return (
         <Formulario>
             <ContenedorFormulario>
-                <h2>Falta poco</h2>
+                <Text fontSize='5xl' textColor='beige'>Falta poco</Text>
                 <Label>Nombre:
-                    <Input type='text' onChange={(evnt) => setName(evnt.target.value)} required placeholder='Introduzca su nombre' />
+                    <Input type='text' onChange={(evnt) => setName(evnt.target.value)} required placeholder='Nombre' />
                 </Label>
-                <Label>Documento:
-                    <Input type='number' onChange={(evnt) => setDni(evnt.target.value)} required placeholder='Introduzca su numero de documento' />
+                <Label>DNI:
+                    <Input type='number' onChange={(evnt) => setDni(evnt.target.value)} required placeholder='Número de documento' />
                 </Label>
                 <Label>Email:
-                    <Input type='email' onChange={(evnt) => setEmail(evnt.target.value)} required placeholder='Introduzca su dirección de email' />
+                    <Input type='email' onChange={(evnt) => setEmail(evnt.target.value)} required placeholder='Dirección de e-mail' />
                 </Label>
                 <Label>Telefono:
-                    <Input type='number' onChange={(evnt) => setPhone(evnt.target.value)} required placeholder='Introduzca su numero de teléfono' />
+                    <Input type='number' onChange={(evnt) => setPhone(evnt.target.value)} required placeholder='Número deeléfono' />
                 </Label>
             </ContenedorFormulario>
 
             <Detalle>
-                <h2>Detalle de tu compra</h2>
+                <Text fontSize='5xl' textAlign='center' textDecoration='underline' textColor='beige'>Detalle de tu compra</Text>
                 {carrito.map((prod) => {
                     return (
-                        <DetalleCarrito key={prod.id}>
-                            <Link to={`/detalles/${prod.id}`}> <Image src={prod.imagenProd} alt={prod.nombreProd} /></Link>
-                            <Link to={`/detalles/${prod.id}`}> {prod.nombreProd} </Link>
-                            <Link to={`/detalles/${prod.id}`}> <P>Precio: $ {prod.precioProd}</P> </Link>
-                        </DetalleCarrito>
+                        <CardCartItem key={prod.id}>
+                            <Link to={`/detalles/${prod.id}`}> <img className='img-cart' src={prod.imagenProd} alt={prod.nombreProd} /></Link>
+                            <Text fontSize='2xl' textAlign='center' textColor='beige' justifyContent='center'> {prod.nombreProd} - </Text>
+                            <Text fontSize='2xl' textAlign='center' alignItems='center'> {prod.quantity} </Text>
+                            <Text fontSize='2xl' textAlign='center' alignItems='center'> <P> Precio: $ {prod.precioProd}</P> </Text>
+                        </CardCartItem>
                     );
                 })}
-                {/* <h3>Total: ${total()}</h3> */}
-                <Link to='/carrito'>Volver al carrito</Link>
+                <br />
+                <Link to='/carrito'><Button>Volver al carrito</Button></Link>
+                <br />
                 <Button type='submit' onClick={createOrder}>Finalizar compra</Button>
+                <ToastContainer />
             </Detalle>
         </Formulario>
     )

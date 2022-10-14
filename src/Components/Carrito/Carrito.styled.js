@@ -29,7 +29,7 @@ export const VolverHaciaAtras = styled.button`
 `;
 
 export const CarritoContenedor = styled.div`
-    height: 100vh;
+    height: 100%;
     margin-bottom: 100px;
     display: flex;
     align-items: stretch;
