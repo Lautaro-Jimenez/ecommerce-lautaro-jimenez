@@ -1,5 +1,3 @@
-# VENCIÓ FIREBASE, NO MUESTRA STOCK!
-
 ![JimenezLogo](./src/assets/jimenezLogo.png)
 
 # JIMENEZ OUTLET - Proyecto React JS 
